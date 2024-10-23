@@ -30,7 +30,7 @@ urlpatterns = [
     path('articles/', include('blog.urls')),  # URLs de la app 'blog'
     path('api/', include('projects.urls')),  # Incluye las rutas de la API desde la app 'projects'
 
-    # JWT Authentication endpoints
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # # JWT Authentication endpoints
+    # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
