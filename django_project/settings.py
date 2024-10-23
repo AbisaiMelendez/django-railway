@@ -91,8 +91,8 @@ DATABASES = {
     # }
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        #default='postgresql://administrator:erCiG4ExgyUq45MIZAHWaCQHZzGGxvmy@dpg-cscg48jtq21c7396hn40-a/surgepays_it',
-        default='sqlite:///db.sqlite3',
+        default='postgresql://administrator:erCiG4ExgyUq45MIZAHWaCQHZzGGxvmy@dpg-cscg48jtq21c7396hn40-a/surgepays_it',
+        #default='sqlite:///db.sqlite3',
         conn_max_age=600
     )
 }
