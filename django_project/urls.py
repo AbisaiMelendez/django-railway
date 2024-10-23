@@ -19,10 +19,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include  # No necesitas importar router aquí
 
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
+# from rest_framework_simplejwt.views import (
+#     TokenObtainPairView,
+#     TokenRefreshView,
+# )
 
 urlpatterns = [
     path('', include('home.urls')),  # URLs de la app 'home'
