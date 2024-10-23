@@ -11,7 +11,7 @@
             const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjMzNjkxLCJpYXQiOjE3Mjk2MzMzOTEsImp0aSI6IjRiMjU3YWI4ZWM0NzQ2NDBiODQxMDRhNDc4ZDRhYjUzIiwidXNlcl9pZCI6MX0.J5IaJs9TJV6aDGj3E_ncuzq5ICxrm2JpJDqDzwUqPhI';
 
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/brands/', {
+                const response = await fetch('http://django-railway-pkh8.onrender.com/api/brands', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
