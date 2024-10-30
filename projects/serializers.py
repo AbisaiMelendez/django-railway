@@ -34,22 +34,36 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 
+# class InventorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Inventory
+#         fields = ['id', 'batch_code', 'series', 'model', 'brand', 'category', 'quantity', 'date_added', 'active']
+
+#     def create(self, validated_data):
+#         series = validated_data.pop('series')
+#         model = validated_data.pop('model')
+#         brand = validated_data.pop('brand')
+#         category = validated_data.pop('category')
+
+#         inventory = Inventory.objects.create(
+#             series=series,
+#             model=model,
+#             brand=brand,
+#             category=category,
+#             **validated_data
+#         )
+#         return inventory
+
 class InventorySerializer(serializers.ModelSerializer):
+    series = serializers.PrimaryKeyRelatedField(queryset=Series.objects.all())
+    model = serializers.PrimaryKeyRelatedField(queryset=Model.objects.all())
+    brand = serializers.PrimaryKeyRelatedField(queryset=Brand.objects.all())
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+
     class Meta:
         model = Inventory
         fields = ['id', 'batch_code', 'series', 'model', 'brand', 'category', 'quantity', 'date_added', 'active']
 
     def create(self, validated_data):
-        series = validated_data.pop('series')
-        model = validated_data.pop('model')
-        brand = validated_data.pop('brand')
-        category = validated_data.pop('category')
-
-        inventory = Inventory.objects.create(
-            series=series,
-            model=model,
-            brand=brand,
-            category=category,
-            **validated_data
-        )
+        inventory = Inventory.objects.create(**validated_data)
         return inventory
