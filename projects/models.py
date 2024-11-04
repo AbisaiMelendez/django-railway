@@ -30,7 +30,7 @@ class Series(models.Model):
     active = models.CharField(max_length=20, default='active')
     created_at = models.DateTimeField(auto_now_add=True)  # Fecha de creación
     updated_at = models.DateTimeField(auto_now=True)    
-    
+        
     def __str__(self):
         return f"{self.name} ({self.model.name})"
 
@@ -54,6 +54,7 @@ class Inventory(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name="batches_brand")  # Relacionar con Brand
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="batches_category")  # Relacionar con Category
     quantity = models.IntegerField()
+    status_i = models.CharField(max_length=500)
     date_added = models.DateTimeField(auto_now_add=True)
     active = models.CharField(max_length=20, default='active')
 
